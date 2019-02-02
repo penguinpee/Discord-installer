@@ -53,6 +53,7 @@ ln -s %{_datadir}/%{lowercase_name}/%{name} $RPM_BUILD_ROOT/%{_bindir}
 
 %files
 %{_bindir}/%{name}
+%attr(0755, root, root) %{_datadir}/%{lowercase_name}/%{name}
 %{_datadir}/%{lowercase_name}
 %{_datadir}/applications/*.desktop
 %{_datadir}/pixmaps/*.png
