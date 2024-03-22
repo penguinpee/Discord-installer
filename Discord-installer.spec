@@ -1,13 +1,16 @@
 %global         debug_package   %{nil}
 
+%global forgeurl https://github.com/penguinpee/Discord-installer
+
 Name:           Discord-installer
-Version:        1.5.1
+Version:        1.5.2
 Release:        1%{?dist}
 Summary:        Some systemd services to install Discord on Redhat based systems
-
+%global tag %{version}
+%forgemeta
 License:        MIT
-URL:            https://github.com/penguinpee/Discord-installer
-Source0:        Discord-installer-1.5.1.tar.gz
+URL:            %forgeurl
+Source0:        %forgesrc
 
 ExclusiveArch:  x86_64
 BuildRequires:  make
@@ -28,7 +31,7 @@ Some systemd services to install Discord on Redhat based systems.
 
 
 %prep
-%autosetup -n Discord-installer-1.5.1
+%forgeautosetup
 
 
 %build
@@ -77,6 +80,13 @@ fi
 
 
 %changelog
+* Fri Mar 22 2024 Sandro <devel@penguinpee.nl> - 1.5.2-1
+- Fix issue with special characters in URL being passed.
+- Fix use of `uname`
+- Some pedantic changes to build.sh
+- Add Packit automation
+- Update spec file
+
 * Sat Feb 02 2019 Laurent Tréguier <laurent@treguier.org> - 1.5.1-1
 - new version
 
