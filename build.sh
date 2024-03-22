@@ -6,6 +6,7 @@ url=$(curl -sI "$3" | grep location | cut -d' ' -f2 | dos2unix)
 version=$(echo $url | egrep -o "$lowercase_name-[0-9.]+[0-9]" | grep -Eo [0-9.]+)
 rebuild=false
 rebuild_trigger="/var/lib/discord-installer-rebuild-$name"
+arch="$(uname -m)"
 
 if rpm -qi $name &> /dev/null && [[ $(rpm -q --queryformat '%{VERSION}' $name) = $version ]]
 then
@@ -39,7 +40,7 @@ else
     package_manager=yum
 fi
 
-if $package_manager reinstall -y ../RPMS/$(uname -p)/*.rpm || $package_manager install -y ../RPMS/$(uname -p)/*.rpm
+if $package_manager reinstall -y ../RPMS/${arch}/*.rpm || $package_manager install -y ../RPMS/${arch}/*.rpm
 then
     if $rebuild
     then
