@@ -12,7 +12,8 @@ License:        MIT
 URL:            %forgeurl
 Source0:        %forgesrc
 
-ExclusiveArch:  x86_64
+ExcludeArch:    %{ix86}
+BuildArch:      noarch
 BuildRequires:  make
 BuildRequires:  pkgconfig(systemd)
 Requires:       coreutils
@@ -82,6 +83,7 @@ fi
 %changelog
 * Sun Mar 23 2025 Sandro <devel@penguinpee.nl> - 1.5.2-2
 - Update download URL
+- Make package noarch and exclude i686
 
 * Fri Mar 22 2024 Sandro <devel@penguinpee.nl> - 1.5.2-1
 - Fix issue with special characters in URL being passed.
