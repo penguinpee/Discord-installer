@@ -1,16 +1,17 @@
 %global         debug_package   %{nil}
 
-%global forgeurl https://github.com/penguinpee/Discord-installer
-
 Name:           Discord-installer
 Version:        1.5.2
 Release:        2%{?dist}
 Summary:        Some systemd services to install Discord on Redhat based systems
+
+%global forgeurl https://github.com/penguinpee/Discord-installer
 %global tag %{version}
 %forgemeta
+
 License:        MIT
 URL:            %forgeurl
-Source0:        %forgesrc
+Source:         %forgesrc
 
 ExcludeArch:    %{ix86}
 BuildArch:      noarch
