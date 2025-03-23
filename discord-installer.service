@@ -6,7 +6,7 @@ After=network-online.target
 [Service]
 Type=oneshot
 RemainAfterExit=no
-ExecStart=/usr/libexec/discord-installer/build.sh Discord discord "https://discordapp.com/api/download?platform=linux&format=tar.gz"
+ExecStart=/usr/libexec/discord-installer/build.sh Discord discord "https://discord.com/api/download?platform=linux&format=tar.gz"
 
 [Install]
 WantedBy=graphical.target

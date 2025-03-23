@@ -4,7 +4,7 @@
 
 Name:           Discord-installer
 Version:        1.5.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Some systemd services to install Discord on Redhat based systems
 %global tag %{version}
 %forgemeta
@@ -80,6 +80,9 @@ fi
 
 
 %changelog
+* Sun Mar 23 2025 Sandro <devel@penguinpee.nl> - 1.5.2-2
+- Update download URL
+
 * Fri Mar 22 2024 Sandro <devel@penguinpee.nl> - 1.5.2-1
 - Fix issue with special characters in URL being passed.
 - Fix use of `uname`
