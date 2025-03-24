@@ -1,4 +1,5 @@
 %global         debug_package   %{nil}
+%global         source_date_epoch_from_changelog    %{nil}
 %global         lowercase_name  [lowercase_name]
 
 Name:           [name]
@@ -57,3 +58,6 @@ ln -s %{_datadir}/%{lowercase_name}/%{name} $RPM_BUILD_ROOT/%{_bindir}
 %{_datadir}/%{lowercase_name}
 %{_datadir}/applications/*.desktop
 %{_datadir}/pixmaps/*.png
+
+
+%changelog

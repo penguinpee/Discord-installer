@@ -3,7 +3,7 @@
 name=$1
 lowercase_name=$2
 url="$(curl -sI "$3" | grep location | cut -d' ' -f2 | dos2unix)"
-version="$(echo ${url} | egrep -o "${lowercase_name}-[0-9.]+[0-9]" | grep -Eo [0-9.]+)"
+version="$(echo ${url} | grep -Eo "${lowercase_name}-[0-9.]+[0-9]" | grep -Eo [0-9.]+)"
 rebuild="false"
 rebuild_trigger="/var/lib/discord-installer-rebuild-${name}"
 arch="$(uname -m)"
@@ -28,7 +28,8 @@ pushd ${HOME}/rpmbuild/SPECS
 sed -i "s,\[name\],${name},"                      ${name}.spec
 sed -i "s,\[lowercase_name\],${lowercase_name},"  ${name}.spec
 sed -i "s,\[url\],${url},"                        ${name}.spec
-sed -i "s,\[version\],${version},"                ${name}.spec
+
+rpmdev-bumpspec -n ${version} -c "Update to ${version}" ${name}.spec
 
 spectool -g -C ../SOURCES ${name}.spec
 rpmbuild -bb ${name}.spec

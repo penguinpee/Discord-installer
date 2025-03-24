@@ -1,8 +1,6 @@
-%global         debug_package   %{nil}
-
 Name:           Discord-installer
-Version:        1.5.2
-Release:        2%{?dist}
+Version:        1.5.3
+Release:        1%{?dist}
 Summary:        Some systemd services to install Discord on Redhat based systems
 
 %global forgeurl https://github.com/penguinpee/Discord-installer
@@ -82,6 +80,9 @@ fi
 
 
 %changelog
+* Mon Mar 24 2025 Sandro <devel@penguinpee.nl> - 1.5.3-1
+- Improve script and spec file
+
 * Sun Mar 23 2025 Sandro <devel@penguinpee.nl> - 1.5.2-2
 - Update download URL
 - Make package noarch and exclude i686
