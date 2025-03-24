@@ -9,7 +9,7 @@ Summary:        Some systemd services to install Discord on Redhat based systems
 
 License:        MIT
 URL:            %forgeurl
-Source:         %forgesrc
+Source:         %forgesource
 
 ExcludeArch:    %{ix86}
 BuildArch:      noarch
