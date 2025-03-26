@@ -41,7 +41,7 @@ else
     package_manager="yum"
 fi
 
-if ${package_manager} reinstall -y ../RPMS/${arch}/*.rpm || ${package_manager} install -y ../RPMS/${arch}/*.rpm
+if ${package_manager} install -y ../RPMS/${arch}/*.rpm || ${package_manager} reinstall -y ../RPMS/${arch}/*.rpm
 then
     if ${rebuild}
     then
