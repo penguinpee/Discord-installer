@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 name=$1
 lowercase_name=$2
@@ -19,6 +19,7 @@ then
 fi
 
 export HOME="/tmp/discord-installer"
+[ -d ${HOME} ] && rm -r ${HOME}
 mkdir -p ${HOME}
 rpmdev-setuptree
 
@@ -54,7 +55,6 @@ else
 fi
 
 popd
-rm -r ${HOME}
 
 if [[ -f ${rebuild_trigger} ]]
 then
